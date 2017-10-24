@@ -1,0 +1,199 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ad12093f-4594-48d6-b15a-fc7aa0e20d4b" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Sakila DW</ID>
+  <Name>Sakila DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="47237a45-633a-4bf7-8d0b-dfd9767ce784">
+      <ID>Dim Customer</ID>
+      <Name>Dim Customer</Name>
+      <DimensionID>Dim Customer</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4d678344-0542-42d6-aaf0-14aa8a4d8c07">
+          <AttributeID>DW Customer Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="35892f6b-ed0a-4fe3-87e6-a83e82b6b028">
+          <AttributeID>First Name</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b07b1061-4d63-4469-99f6-5ea873f9206b">
+          <AttributeID>Last Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="442cd59a-e6e5-4431-8f4c-908b1e07f615">
+      <ID>Dim Film</ID>
+      <Name>Dim Film</Name>
+      <DimensionID>Dim Film</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="789adc76-e97d-4108-9a8d-63b3991296a2">
+          <AttributeID>DW Film Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c8b4ba91-346d-4e69-977c-d243d6747f61">
+          <AttributeID>Title</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ed7efc42-0db1-4ccf-89db-b33d926e2ac2">
+          <AttributeID>Release Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ecdb89e6-e07d-4c00-864d-924590515c28">
+          <AttributeID>Film Language</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ea6a5c33-345c-4f2b-82ca-b3c3707272c7">
+          <AttributeID>Film Orig Language</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c22c9439-35a5-4c15-88e1-733968cd712a">
+          <AttributeID>Film Length</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="74763131-f5b3-4f7b-8f79-4eec6640dff2">
+          <AttributeID>Rating</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="43f25f4c-599a-4fd9-be7b-9c17720df487">
+          <AttributeID>Rental Duration</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a5b62bbf-54cc-4a34-84e1-1b7dfadc3fc6">
+          <AttributeID>Rental Rate</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b1ffead2-2825-4ed5-85f0-20581d6bdaf5">
+          <AttributeID>Replacement Cost</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a682e1c6-aa2f-4ad6-9ee7-ce0752c8d52e">
+          <AttributeID>Last Update</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b9ded1c5-bbb7-440b-8859-960b2175e563">
+          <AttributeID>Film Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a09aeab0-049e-409f-a495-64079b09de46">
+          <AttributeID>Current Flag</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="55f60505-19f2-44e1-a3fb-cdb972b0e671">
+      <ID>Fact Rent</ID>
+      <Name>Fact Rent</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="12f9644c-e38f-4d14-af11-797bee30372e">
+          <ID>Payment Amount</ID>
+          <Name>Payment Amount</Name>
+          <Source dwd:design-time-name="253efed6-4c7f-41f3-8f9f-55b462e2001e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e19a0e0b-bdcf-4da8-8786-7fd672153fe8">
+              <TableID>dbo_FactRent</TableID>
+              <ColumnID>PaymentAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a0fc2a18-ef28-48f1-b179-679b41c31635">
+          <ID>Duration Date</ID>
+          <Name>Duration Date</Name>
+          <Source dwd:design-time-name="f7494c29-ccfe-4ced-b91b-bf829d383429">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="13d8ea7a-7672-4ce0-9c8f-84f4ed71875c">
+              <TableID>dbo_FactRent</TableID>
+              <ColumnID>DurationDate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="973c7bf1-b90f-4488-b3c8-73b562123599">
+          <ID>Fact Rent Count</ID>
+          <Name>Fact Rent Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="886d397f-5211-479d-b1d6-0256c6ad1d5b">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="81755c52-f217-4726-9f59-033d9be70125">
+              <TableID>dbo_FactRent</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="fb16cd5d-4b4e-447a-a95f-5a66cb4e93a8">
+          <CubeDimensionID>Dim Customer</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="a93196b3-dad2-4468-bc24-59bc92d5b122">
+              <AttributeID>DW Customer Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d27ce651-44dc-491d-b457-0599e518f2d7">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="41311b0f-7d1f-4df9-9189-ea1241fa0f8e">
+                    <TableID>dbo_FactRent</TableID>
+                    <ColumnID>DWCustomerKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c0adb6b6-3245-41d2-8310-d1f91a54c3b2">
+          <CubeDimensionID>Dim Film</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5c88c495-07c4-4f32-8b8e-d18cae3c61d1">
+              <AttributeID>DW Film Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="98c98115-4716-4793-80a1-952c9f4fcf1b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2cd00cf3-2d64-4d0e-be98-831262be2a0e">
+                    <TableID>dbo_FactRent</TableID>
+                    <ColumnID>DWFilmKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="7491fa3d-6b25-4a37-aa9c-a9c973ca27c1">
+    <DataSourceViewID>Sakila DW</DataSourceViewID>
+  </Source>
+</Cube>
