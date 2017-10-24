@@ -19,35 +19,70 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>zWoagabW0Cx444gKzp2SVpaNRqI=10/24/2017 12:15:11 PM10/24/2017 5:59:27 PM</TimeStamp>
+        <TimeStamp>zWoagabW0Cx444gKzp2SVpaNRqI=10/24/2017 12:15:11 PM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Sakila DW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>8S7tUTUMZwWen1SLkHM9WpZ8y3I=10/24/2017 3:07:22 PM10/24/2017 5:59:27 PM</TimeStamp>
+        <TimeStamp>8S7tUTUMZwWen1SLkHM9WpZ8y3I=10/24/2017 3:07:22 PM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Sakila DW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>6QI8Mp3pwGprq8MmPZlcYZ3ftx4=10/24/2017 6:00:42 PM10/24/2017 6:00:42 PM</TimeStamp>
+        <TimeStamp>FWyWP1yXDSqOSwhxKIku1A+Uszc=10/25/2017 12:03:59 AM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Dim Customer</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Ky2/OFuAADpmBuRszD/b2gU+VsI=10/24/2017 6:01:06 PM10/24/2017 6:01:06 PM</TimeStamp>
+        <TimeStamp>r1eox4cs3PLmCmGOYKZKVRFJdQY=10/25/2017 12:04:09 AM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Dim Film</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dH4CF/kjTBHhNW/ul12loLTSoSk=10/25/2017 12:04:18 AM10/24/2017 10:59:59 PM</TimeStamp>
+        <ID>
+          <String>Dim Staff</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>3WkV0N7ekZPvSVCcxluuY23m/SM=10/25/2017 12:33:19 AM10/25/2017 12:03:46 AM</TimeStamp>
+        <ID>
+          <String>DimDate</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>as6td5cRdMbK/6ngobp0IloNH0o=10/25/2017 12:37:41 AM10/25/2017 12:33:19 AM</TimeStamp>
+        <ID>
+          <String>Dim Category</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>BMaBwQ0fjYFsKZIJF53lZgITq/Q=10/25/2017 12:37:34 AM10/25/2017 12:34:05 AM</TimeStamp>
+        <ID>
+          <String>Dim Cust Geography</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>M230yvl3hpfcus2LmTpaoKEAEJM=10/25/2017 12:37:20 AM10/25/2017 12:37:20 AM</TimeStamp>
+        <ID>
+          <String>DimActor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>nyUq7o21Fz/xwennm44i/lperJc=10/24/2017 6:02:06 PM10/24/2017 6:02:06 PME6gF7Zhzszam4brTavpgP+L+AxQ=10/24/2017 6:02:06 PM10/24/2017 6:02:06 PM</TimeStamp>
+        <TimeStamp>nyUq7o21Fz/xwennm44i/lperJc=10/24/2017 6:02:06 PM10/24/2017 9:37:51 PME6gF7Zhzszam4brTavpgP+L+AxQ=10/24/2017 6:02:06 PM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Sakila DW</String>
         </ID>
@@ -55,7 +90,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>GDdV0KQbmE2EM78zcfe40Icwp0g=10/17/2017 1:08:15 PM10/24/2017 5:59:27 PM</TimeStamp>
+      <TimeStamp>GDdV0KQbmE2EM78zcfe40Icwp0g=10/17/2017 1:08:15 PM10/24/2017 9:37:51 PM</TimeStamp>
       <ID>
         <String>MDSakilaProjectMaryana</String>
       </ID>
@@ -64,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-10-24T15:02:13.46Z</LastDeployed>
+  <LastDeployed>2017-10-24T21:37:52.453333Z</LastDeployed>
 </DeploymentSnapshot>

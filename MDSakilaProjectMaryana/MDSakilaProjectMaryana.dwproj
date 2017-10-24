@@ -20,12 +20,32 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Customer.dim</Name>
-      <FullPath>Dim Customer.dim</FullPath>
+      <Name>DimCustomer.dim</Name>
+      <FullPath>DimCustomer.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Dim Film.dim</Name>
-      <FullPath>Dim Film.dim</FullPath>
+      <Name>DimFilm.dim</Name>
+      <FullPath>DimFilm.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DimStaff.dim</Name>
+      <FullPath>DimStaff.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DimDate.dim</Name>
+      <FullPath>DimDate.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DimCategory.dim</Name>
+      <FullPath>DimCategory.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DimCustGeography.dim</Name>
+      <FullPath>DimCustGeography.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DimActor.dim</Name>
+      <FullPath>DimActor.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

@@ -18,6 +18,21 @@
       <Dimension>
         <ID>Dim Film</ID>
       </Dimension>
+      <Dimension>
+        <ID>Dim Staff</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DimDate</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Category</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Cust Geography</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DimActor</ID>
+      </Dimension>
     </Dimensions>
     <Cubes>
       <Cube>
