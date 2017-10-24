@@ -75,14 +75,14 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>M230yvl3hpfcus2LmTpaoKEAEJM=10/25/2017 12:37:20 AM10/25/2017 12:37:20 AM</TimeStamp>
+        <TimeStamp>Z0NHrt+gfwJt0stHwXBi7i4wQKM=10/25/2017 1:26:33 AM10/25/2017 12:37:20 AM</TimeStamp>
         <ID>
           <String>DimActor</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>nyUq7o21Fz/xwennm44i/lperJc=10/24/2017 6:02:06 PM10/24/2017 9:37:51 PME6gF7Zhzszam4brTavpgP+L+AxQ=10/24/2017 6:02:06 PM10/24/2017 9:37:51 PM</TimeStamp>
+        <TimeStamp>Ogjtp99MEExLSvkWEiHxvQHjAjQ=10/25/2017 1:28:37 AM10/24/2017 9:37:51 PMWGv3CP4TzozHar5lD27ywosyV4E=10/25/2017 1:28:37 AM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Sakila DW</String>
         </ID>
@@ -99,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-10-24T21:37:52.453333Z</LastDeployed>
+  <LastDeployed>2017-10-24T22:28:42.606667Z</LastDeployed>
 </DeploymentSnapshot>

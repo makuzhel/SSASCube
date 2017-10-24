@@ -46,6 +46,14 @@
               </Partition>
             </Partitions>
           </MeasureGroup>
+          <MeasureGroup>
+            <ID>Film Actor</ID>
+            <Partitions>
+              <Partition>
+                <ID>Film Actor</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
         </MeasureGroups>
       </Cube>
     </Cubes>
