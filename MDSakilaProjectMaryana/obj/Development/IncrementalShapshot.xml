@@ -26,35 +26,35 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>8S7tUTUMZwWen1SLkHM9WpZ8y3I=10/24/2017 3:07:22 PM10/24/2017 9:37:51 PM</TimeStamp>
+        <TimeStamp>pdLt0n09c7y+w6UPnwhrDftwiPw=10/25/2017 5:24:17 PM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Sakila DW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>FWyWP1yXDSqOSwhxKIku1A+Uszc=10/25/2017 12:03:59 AM10/24/2017 9:37:51 PM</TimeStamp>
+        <TimeStamp>Edk31P0ywPumQX1dmLCs9z+0hos=10/25/2017 2:28:37 PM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Dim Customer</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>r1eox4cs3PLmCmGOYKZKVRFJdQY=10/25/2017 12:04:09 AM10/24/2017 9:37:51 PM</TimeStamp>
+        <TimeStamp>ZMkAeW1l72+PBNrbRPii8OWcTv0=10/25/2017 2:28:37 PM10/24/2017 9:37:51 PM</TimeStamp>
         <ID>
           <String>Dim Film</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>dH4CF/kjTBHhNW/ul12loLTSoSk=10/25/2017 12:04:18 AM10/24/2017 10:59:59 PM</TimeStamp>
+        <TimeStamp>osQok9DFVToeg06P6kFFV6gsL7o=10/25/2017 2:28:37 PM10/24/2017 10:59:59 PM</TimeStamp>
         <ID>
           <String>Dim Staff</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>3WkV0N7ekZPvSVCcxluuY23m/SM=10/25/2017 12:33:19 AM10/25/2017 12:03:46 AM</TimeStamp>
+        <TimeStamp>1BrjD5RnJSnjiBgvGDCkbDOX5gk=10/25/2017 2:28:37 PM10/25/2017 12:03:46 AM</TimeStamp>
         <ID>
           <String>DimDate</String>
         </ID>
@@ -68,7 +68,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>BMaBwQ0fjYFsKZIJF53lZgITq/Q=10/25/2017 12:37:34 AM10/25/2017 12:34:05 AM</TimeStamp>
+        <TimeStamp>NzkN5n/kAO9HqX1ecyqSeg/0J98=10/25/2017 2:28:37 PM10/25/2017 12:34:05 AM</TimeStamp>
         <ID>
           <String>Dim Cust Geography</String>
         </ID>
@@ -99,5 +99,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-10-24T23:55:11.293333Z</LastDeployed>
+  <LastDeployed>2017-10-25T14:24:34.846667Z</LastDeployed>
 </DeploymentSnapshot>
