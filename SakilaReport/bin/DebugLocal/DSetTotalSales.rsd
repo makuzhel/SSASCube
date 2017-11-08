@@ -4,13 +4,6 @@
     <Query>
       <DataSourceReference>DSourceSakilaCube</DataSourceReference>
       <DataSetParameters>
-        <DataSetParameter Name="DimCategoryCategoryName">
-          <ReadOnly>false</ReadOnly>
-          <Nullable>false</Nullable>
-          <OmitFromQuery>false</OmitFromQuery>
-          <rd:DbType>Object</rd:DbType>
-          <rd:IsMultiValued>true</rd:IsMultiValued>
-        </DataSetParameter>
         <DataSetParameter Name="FromRentalDateDateKey">
           <DefaultValue>[Rental Date].[Date Key].&amp;[20050401]</DefaultValue>
           <ReadOnly>false</ReadOnly>
@@ -25,8 +18,16 @@
           <OmitFromQuery>false</OmitFromQuery>
           <rd:DbType>Object</rd:DbType>
         </DataSetParameter>
+        <DataSetParameter Name="DimCategoryCategoryName">
+          <DefaultValue>[DimCategory].[Category Name].[All]</DefaultValue>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+          <rd:IsMultiValued>true</rd:IsMultiValued>
+        </DataSetParameter>
       </DataSetParameters>
-      <CommandText> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[FactRentCount], [Measures].[Duration Date] } ON COLUMNS, NON EMPTY { ([Rental Date].[Date Full].[Date Full].ALLMEMBERS * [Rental Date].[Date Key].[Date Key].ALLMEMBERS * [DimCategory].[Category Name].[Category Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <CommandText> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[FactRentCount], [Measures].[Duration Date] } ON COLUMNS, NON EMPTY { ([Rental Date].[Date Full].[Date Full].ALLMEMBERS * [Rental Date].[Date Key].[Date Key].ALLMEMBERS * [DimCategory].[Category Name].[Category Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
       <rd:DesignerState>
         <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
           <CommandType>MDX</CommandType>
@@ -121,13 +122,6 @@
             <Filter>
               <FilterItems>
                 <FilterItem>
-                  <HierarchyUniqueName>[DimCategory].[Category Name]</HierarchyUniqueName>
-                  <Condition xsi:type="EqualTo">
-                    <Members />
-                    <Parametrized>true</Parametrized>
-                  </Condition>
-                </FilterItem>
-                <FilterItem>
                   <HierarchyUniqueName>[Rental Date].[Date Key]</HierarchyUniqueName>
                   <Condition xsi:type="Range">
                     <Basis>Member</Basis>
@@ -135,6 +129,17 @@
                     <FromParametrized>true</FromParametrized>
                     <To>[Rental Date].[Date Key].&amp;[20170528]</To>
                     <ToParametrized>true</ToParametrized>
+                  </Condition>
+                </FilterItem>
+                <FilterItem>
+                  <HierarchyUniqueName>[DimCategory].[Category Name]</HierarchyUniqueName>
+                  <Condition xsi:type="EqualTo">
+                    <Members>
+                      <Member>
+                        <MemberUniqueName>[DimCategory].[Category Name].[All]</MemberUniqueName>
+                      </Member>
+                    </Members>
+                    <Parametrized>true</Parametrized>
                   </Condition>
                 </FilterItem>
               </FilterItems>
@@ -146,21 +151,8 @@
             </QueryProperties>
           </QuerySpecification>
           <Query>
-            <Statement> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[FactRentCount], [Measures].[Duration Date] } ON COLUMNS, NON EMPTY { ([Rental Date].[Date Full].[Date Full].ALLMEMBERS * [Rental Date].[Date Key].[Date Key].ALLMEMBERS * [DimCategory].[Category Name].[Category Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+            <Statement> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[FactRentCount], [Measures].[Duration Date] } ON COLUMNS, NON EMPTY { ([Rental Date].[Date Full].[Date Full].ALLMEMBERS * [Rental Date].[Date Key].[Date Key].ALLMEMBERS * [DimCategory].[Category Name].[Category Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
             <ParameterDefinitions>
-              <ParameterDefinition>
-                <Name>DimCategoryCategoryName</Name>
-                <DefaultValues />
-                <Caption>Category Name</Caption>
-                <HierarchyUniqueName>[DimCategory].[Category Name]</HierarchyUniqueName>
-                <ParameterValuesQuery>
-                  <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [DimCategory].[Category Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [DimCategory].[Category Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [DimCategory].[Category Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [DimCategory].[Category Name].ALLMEMBERS ON ROWS FROM [SakilaDWCube]</Statement>
-                  <ParameterizedStatement>
-                    <ReferencedParameters />
-                  </ParameterizedStatement>
-                </ParameterValuesQuery>
-                <MultipleValues>true</MultipleValues>
-              </ParameterDefinition>
               <ParameterDefinition>
                 <Name>FromRentalDateDateKey</Name>
                 <Usage>RangeFrom</Usage>
@@ -170,14 +162,9 @@
                 <Caption>From Rental Date.Date Key</Caption>
                 <HierarchyUniqueName>[Rental Date].[Date Key]</HierarchyUniqueName>
                 <ParameterValuesQuery>
-                  <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Rental Date].[Date Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Rental Date].[Date Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Rental Date].[Date Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Rental Date].[Date Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])</Statement>
+                  <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Rental Date].[Date Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Rental Date].[Date Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Rental Date].[Date Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Rental Date].[Date Key].ALLMEMBERS ON ROWS FROM [SakilaDWCube]</Statement>
                   <ParameterizedStatement>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Rental Date].[Date Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Rental Date].[Date Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Rental Date].[Date Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Rental Date].[Date Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])</Statement>
-                    <ReferencedParameters>
-                      <ReferencedParameter>
-                        <Name>DimCategoryCategoryName</Name>
-                      </ReferencedParameter>
-                    </ReferencedParameters>
+                    <ReferencedParameters />
                   </ParameterizedStatement>
                 </ParameterValuesQuery>
               </ParameterDefinition>
@@ -190,16 +177,34 @@
                 <Caption>To Rental Date.Date Key</Caption>
                 <HierarchyUniqueName>[Rental Date].[Date Key]</HierarchyUniqueName>
                 <ParameterValuesQuery>
-                  <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Rental Date].[Date Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Rental Date].[Date Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Rental Date].[Date Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Rental Date].[Date Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])</Statement>
+                  <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Rental Date].[Date Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Rental Date].[Date Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Rental Date].[Date Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Rental Date].[Date Key].ALLMEMBERS ON ROWS FROM [SakilaDWCube]</Statement>
                   <ParameterizedStatement>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Rental Date].[Date Key].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Rental Date].[Date Key].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Rental Date].[Date Key].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Rental Date].[Date Key].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@DimCategoryCategoryName, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])</Statement>
+                    <ReferencedParameters />
+                  </ParameterizedStatement>
+                </ParameterValuesQuery>
+              </ParameterDefinition>
+              <ParameterDefinition>
+                <Name>DimCategoryCategoryName</Name>
+                <DefaultValues>
+                  <DefaultValue>[DimCategory].[Category Name].[All]</DefaultValue>
+                </DefaultValues>
+                <Caption>Category Name</Caption>
+                <HierarchyUniqueName>[DimCategory].[Category Name]</HierarchyUniqueName>
+                <ParameterValuesQuery>
+                  <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [DimCategory].[Category Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [DimCategory].[Category Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [DimCategory].[Category Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [DimCategory].[Category Name].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])</Statement>
+                  <ParameterizedStatement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [DimCategory].[Category Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [DimCategory].[Category Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [DimCategory].[Category Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [DimCategory].[Category Name].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube])</Statement>
                     <ReferencedParameters>
                       <ReferencedParameter>
-                        <Name>DimCategoryCategoryName</Name>
+                        <Name>FromRentalDateDateKey</Name>
+                      </ReferencedParameter>
+                      <ReferencedParameter>
+                        <Name>ToRentalDateDateKey</Name>
                       </ReferencedParameter>
                     </ReferencedParameters>
                   </ParameterizedStatement>
                 </ParameterValuesQuery>
+                <MultipleValues>true</MultipleValues>
               </ParameterDefinition>
             </ParameterDefinitions>
           </Query>

@@ -7,20 +7,15 @@
       <FullPath>DSourceSakilaCube.rds</FullPath>
     </ProjectItem>
   </DataSources>
-  <DataSets>
-    <ProjectItem>
-      <Name>DSetTotalSales.rsd</Name>
-      <FullPath>DSetTotalSales.rsd</FullPath>
-    </ProjectItem>
-  </DataSets>
+  <DataSets />
   <Reports>
-    <ProjectItem>
-      <Name>SalesAnalysisReport.rdl</Name>
-      <FullPath>SalesAnalysisReport.rdl</FullPath>
-    </ProjectItem>
     <ProjectItem>
       <Name>Report1.rdl</Name>
       <FullPath>Report1.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>SalesAnalysisReportStart.rdl</Name>
+      <FullPath>SalesAnalysisReportStart.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>
