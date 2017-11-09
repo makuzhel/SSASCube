@@ -309,6 +309,39 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSourceSakilaDW</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@from">
+            <Value>=Parameters!from.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@to">
+            <Value>=Parameters!to.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>TotalDailySalesByStaff</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DWStaffKey">
+          <DataField>DWStaffKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RentalDateId">
+          <DataField>RentalDateId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -361,7 +394,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Film Staff</Value>
+                                  <Value>Employee</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -373,14 +406,12 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox20</rd:DefaultName>
-                          <Visibility>
-                            <Hidden>true</Hidden>
-                          </Visibility>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <BackgroundColor>LightSteelBlue</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -725,9 +756,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Full_Name.Value</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -738,8 +767,10 @@
                           <rd:DefaultName>Full_Name</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -775,6 +806,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -809,6 +841,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -1943,7 +1976,8 @@
                           <Sizing>FitProportional</Sizing>
                           <Style>
                             <Border>
-                              <Style>None</Style>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
                             </Border>
                           </Style>
                         </Image>
@@ -1966,9 +2000,9 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Picture</Value>
+                                <Value>Picture of employee</Value>
                                 <Style>
-                                  <FontFamily>Arial</FontFamily>
+                                  <FontWeight>Bold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -1976,14 +2010,12 @@
                           </Paragraph>
                         </Paragraphs>
                         <rd:DefaultName>Textbox54</rd:DefaultName>
-                        <Visibility>
-                          <Hidden>true</Hidden>
-                        </Visibility>
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>LightSteelBlue</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -2052,7 +2084,7 @@
               </SortExpression>
             </SortExpressions>
             <Top>0.56124in</Top>
-            <Left>0.02792in</Left>
+            <Left>0.07792in</Left>
             <Height>1.19792in</Height>
             <Width>1.30208in</Width>
             <ZIndex>3</ZIndex>

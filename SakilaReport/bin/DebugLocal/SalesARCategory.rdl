@@ -1432,7 +1432,8 @@
             <DataSetName>DataSetTotal</DataSetName>
             <SortExpressions>
               <SortExpression>
-                <Value>=Fields!Category_Name.Value</Value>
+                <Value>=Fields!Payment_Amount.Value</Value>
+                <Direction>Descending</Direction>
               </SortExpression>
             </SortExpressions>
             <Top>0.56124in</Top>
