@@ -10,6 +10,10 @@
   <DataSets />
   <Reports>
     <ProjectItem>
+      <Name>R2.rdl</Name>
+      <FullPath>R2.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Report1.rdl</Name>
       <FullPath>Report1.rdl</FullPath>
     </ProjectItem>
@@ -22,8 +26,8 @@
       <FullPath>SalesARCategory.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>R2.rdl</Name>
-      <FullPath>R2.rdl</FullPath>
+      <Name>SalesARStaff.rdl</Name>
+      <FullPath>SalesARStaff.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

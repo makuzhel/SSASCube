@@ -95,9 +95,9 @@
       <NameColumn dwd:design-time-name="5098b6c0-fd85-4fd0-afee-9ad8ce3b8e71">
         <DataType>WChar</DataType>
         <DataSize>91</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="be469487-f207-496b-a6fe-b806a3613df8">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="54defcd3-2846-44a6-9afd-084aff56793d">
           <TableID>dbo_DimStaff</TableID>
-          <ColumnID>FullName</ColumnID>
+          <ColumnID>DWStaffKey</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
@@ -152,6 +152,10 @@
         <AttributeRelationship dwd:design-time-name="6a2b0da5-2847-463b-8948-4875cc48616d">
           <AttributeID>Current Flag</AttributeID>
           <Name>Current Flag</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="09b22912-891d-4cc3-8c30-e00182b11ee1">
+          <AttributeID>Full Name</AttributeID>
+          <Name>Full Name</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
@@ -384,6 +388,22 @@
         </KeyColumn>
       </KeyColumns>
       <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a9208166-4f0d-487d-a865-9687896963a2">
+      <ID>Full Name</ID>
+      <Name>Full Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09b85c7f-7bbc-40d9-8860-6f137bf92e3e">
+          <DataType>WChar</DataType>
+          <DataSize>91</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="12466a17-5067-4e69-b80c-0e2ceb65cc2b">
+            <TableID>dbo_DimStaff</TableID>
+            <ColumnID>FullName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>

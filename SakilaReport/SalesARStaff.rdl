@@ -8,6 +8,15 @@
       <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>8a2eb583-6e4e-426c-94a6-f97cb442423c</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="DataSourceSakilaDW">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=localhost;Initial Catalog=SakilaDW</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <rd:DataSourceID>03b28e35-4d60-4df8-8abd-984f7ddfb1b9</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSetTotal">
@@ -21,7 +30,7 @@
             <Value>="[Rental Date].[Date Key].&amp;["+Format(Parameters!to.Value,"yyyyMMdd")+"]"</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToCategoriesSales], [Measures].[FactRentCount], [Measures].[SalesRatioToCategoriesOperations], [Measures].[Duration Date], [Measures].[SalesRatioToCategoriesRentDuration], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimCategory].[Category Name].[Category Name].ALLMEMBERS * [DimCategory].[DW Category Key].[DW Category Key].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToStaffSales], [Measures].[FactRentCount], [Measures].[SalesRatioToStaffOperations], [Measures].[Duration Date], [Measures].[SalesRatioToStaffRentDuration], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimStaff].[DW Staff Key].[DW Staff Key].ALLMEMBERS * [DimStaff].[Full Name].[Full Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -30,24 +39,24 @@
                 <Items>
                   <Item>
                     <ID xsi:type="Level">
-                      <DimensionName>DimCategory</DimensionName>
-                      <HierarchyName>Category Name</HierarchyName>
-                      <HierarchyUniqueName>[DimCategory].[Category Name]</HierarchyUniqueName>
-                      <LevelName>Category Name</LevelName>
-                      <UniqueName>[DimCategory].[Category Name].[Category Name]</UniqueName>
+                      <DimensionName>DimStaff</DimensionName>
+                      <HierarchyName>DW Staff Key</HierarchyName>
+                      <HierarchyUniqueName>[DimStaff].[DW Staff Key]</HierarchyUniqueName>
+                      <LevelName>DW Staff Key</LevelName>
+                      <UniqueName>[DimStaff].[DW Staff Key].[DW Staff Key]</UniqueName>
                     </ID>
-                    <ItemCaption>Category Name</ItemCaption>
+                    <ItemCaption>DW Staff Key</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
                     <ID xsi:type="Level">
-                      <DimensionName>DimCategory</DimensionName>
-                      <HierarchyName>DW Category Key</HierarchyName>
-                      <HierarchyUniqueName>[DimCategory].[DW Category Key]</HierarchyUniqueName>
-                      <LevelName>DW Category Key</LevelName>
-                      <UniqueName>[DimCategory].[DW Category Key].[DW Category Key]</UniqueName>
+                      <DimensionName>DimStaff</DimensionName>
+                      <HierarchyName>Full Name</HierarchyName>
+                      <HierarchyUniqueName>[DimStaff].[Full Name]</HierarchyUniqueName>
+                      <LevelName>Full Name</LevelName>
+                      <UniqueName>[DimStaff].[Full Name].[Full Name]</UniqueName>
                     </ID>
-                    <ItemCaption>DW Category Key</ItemCaption>
+                    <ItemCaption>Full Name</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
@@ -68,10 +77,10 @@
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
-                      <MeasureName>SalesRatioToCategoriesSales</MeasureName>
-                      <UniqueName>[Measures].[SalesRatioToCategoriesSales]</UniqueName>
+                      <MeasureName>SalesRatioToStaffSales</MeasureName>
+                      <UniqueName>[Measures].[SalesRatioToStaffSales]</UniqueName>
                     </ID>
-                    <ItemCaption>SalesRatioToCategoriesSales</ItemCaption>
+                    <ItemCaption>SalesRatioToStaffSales</ItemCaption>
                     <BackColor>true</BackColor>
                     <ForeColor>true</ForeColor>
                     <FontFamily>true</FontFamily>
@@ -100,10 +109,10 @@
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
-                      <MeasureName>SalesRatioToCategoriesOperations</MeasureName>
-                      <UniqueName>[Measures].[SalesRatioToCategoriesOperations]</UniqueName>
+                      <MeasureName>SalesRatioToStaffOperations</MeasureName>
+                      <UniqueName>[Measures].[SalesRatioToStaffOperations]</UniqueName>
                     </ID>
-                    <ItemCaption>SalesRatioToCategoriesOperations</ItemCaption>
+                    <ItemCaption>SalesRatioToStaffOperations</ItemCaption>
                     <BackColor>true</BackColor>
                     <ForeColor>true</ForeColor>
                     <FontFamily>true</FontFamily>
@@ -132,10 +141,10 @@
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
-                      <MeasureName>SalesRatioToCategoriesRentDuration</MeasureName>
-                      <UniqueName>[Measures].[SalesRatioToCategoriesRentDuration]</UniqueName>
+                      <MeasureName>SalesRatioToStaffRentDuration</MeasureName>
+                      <UniqueName>[Measures].[SalesRatioToStaffRentDuration]</UniqueName>
                     </ID>
-                    <ItemCaption>SalesRatioToCategoriesRentDuration</ItemCaption>
+                    <ItemCaption>SalesRatioToStaffRentDuration</ItemCaption>
                     <BackColor>true</BackColor>
                     <ForeColor>true</ForeColor>
                     <FontFamily>true</FontFamily>
@@ -203,7 +212,7 @@
               </QueryProperties>
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToCategoriesSales], [Measures].[FactRentCount], [Measures].[SalesRatioToCategoriesOperations], [Measures].[Duration Date], [Measures].[SalesRatioToCategoriesRentDuration], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimCategory].[Category Name].[Category Name].ALLMEMBERS * [DimCategory].[DW Category Key].[DW Category Key].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToStaffSales], [Measures].[FactRentCount], [Measures].[SalesRatioToStaffOperations], [Measures].[Duration Date], [Measures].[SalesRatioToStaffRentDuration], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimStaff].[DW Staff Key].[DW Staff Key].ALLMEMBERS * [DimStaff].[Full Name].[Full Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>FromRentalDateDateKey</Name>
@@ -241,36 +250,36 @@
         </rd:DesignerState>
       </Query>
       <Fields>
-        <Field Name="Category_Name">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimCategory].[Category Name].[Category Name]" /&gt;</DataField>
+        <Field Name="DW_Staff_Key">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimStaff].[DW Staff Key].[DW Staff Key]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="DW_Category_Key">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimCategory].[DW Category Key].[DW Category Key]" /&gt;</DataField>
+        <Field Name="Full_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimStaff].[Full Name].[Full Name]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Payment_Amount">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Payment Amount]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="SalesRatioToCategoriesSales">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesRatioToCategoriesSales]" /&gt;</DataField>
+        <Field Name="SalesRatioToStaffSales">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesRatioToStaffSales]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="FactRentCount">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[FactRentCount]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="SalesRatioToCategoriesOperations">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesRatioToCategoriesOperations]" /&gt;</DataField>
+        <Field Name="SalesRatioToStaffOperations">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesRatioToStaffOperations]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Duration_Date">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Duration Date]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="SalesRatioToCategoriesRentDuration">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesRatioToCategoriesRentDuration]" /&gt;</DataField>
+        <Field Name="SalesRatioToStaffRentDuration">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesRatioToStaffRentDuration]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="AvgPaymentAmount">
@@ -283,6 +292,23 @@
         </Field>
       </Fields>
     </DataSet>
+    <DataSet Name="DataSetStaffPicture">
+      <Query>
+        <DataSourceName>DataSourceSakilaDW</DataSourceName>
+        <CommandText>SELECT  [DWStaffKey] ,[Picture]
+  FROM [SakilaDW].[dbo].[DimStaff]</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DWStaffKey">
+          <DataField>DWStaffKey</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Picture">
+          <DataField>Picture</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -292,34 +318,34 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.80557in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.22917in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.72917in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.34723in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.8125in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.25001in</Width>
                 </TablixColumn>
                 <TablixColumn>
+                  <Width>0.89583in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.29167in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.14583in</Width>
+                </TablixColumn>
+                <TablixColumn>
                   <Width>1in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.15152in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.10417in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.07292in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -335,7 +361,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Film Category</Value>
+                                  <Value>Film Staff</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -575,7 +601,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox2">
+                        <Textbox Name="Textbox13">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -593,7 +619,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -616,7 +642,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox12">
+                        <Textbox Name="Textbox17">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -634,7 +660,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -651,7 +677,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox19">
+                        <Textbox Name="Textbox22">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -669,7 +695,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <rd:DefaultName>Textbox22</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -687,29 +713,29 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.94792in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Category_Name">
+                        <Textbox Name="Full_Name">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Category_Name.Value</Value>
+                                  <Value>=Fields!Full_Name.Value</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Category_Name</rd:DefaultName>
+                          <rd:DefaultName>Full_Name</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -733,7 +759,8 @@
                                 <TextRun>
                                   <Value>=Fields!Payment_Amount.Value</Value>
                                   <Style>
-                                    <Format>#,0.00;(#,0.00)</Format>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>f2</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -758,14 +785,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SalesRatioToCategoriesSales">
+                        <Textbox Name="SalesRatioToStaffSales">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SalesRatioToCategoriesSales.Value</Value>
+                                  <Value>=Fields!SalesRatioToStaffSales.Value</Value>
                                   <Style>
                                     <Format>0.00%</Format>
                                   </Style>
@@ -776,7 +803,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SalesRatioToCategoriesSales</rd:DefaultName>
+                          <rd:DefaultName>SalesRatioToStaffSales</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -826,14 +853,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SalesRatioToCategoriesOperations">
+                        <Textbox Name="SalesRatioToStaffOperations">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SalesRatioToCategoriesOperations.Value</Value>
+                                  <Value>=Fields!SalesRatioToStaffOperations.Value</Value>
                                   <Style>
                                     <Format>0.00%</Format>
                                   </Style>
@@ -844,7 +871,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SalesRatioToCategoriesOperations</rd:DefaultName>
+                          <rd:DefaultName>SalesRatioToStaffOperations</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -894,14 +921,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SalesRatioToCategoriesRentDuration">
+                        <Textbox Name="SalesRatioToStaffRentDuration">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SalesRatioToCategoriesRentDuration.Value</Value>
+                                  <Value>=Fields!SalesRatioToStaffRentDuration.Value</Value>
                                   <Style>
                                     <Format>0.00%</Format>
                                   </Style>
@@ -912,7 +939,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SalesRatioToCategoriesRentDuration</rd:DefaultName>
+                          <rd:DefaultName>SalesRatioToStaffRentDuration</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -928,7 +955,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox3">
+                        <Textbox Name="Textbox14">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -944,7 +971,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <rd:DefaultName>Textbox14</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -966,7 +993,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="AvgPaymentAmount1">
+                        <Textbox Name="AvgPaymentAmount">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -984,7 +1011,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>AvgPaymentAmount1</rd:DefaultName>
+                          <rd:DefaultName>AvgPaymentAmount</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1000,7 +1027,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="AvgDurationDate1">
+                        <Textbox Name="AvgDurationDate">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1018,7 +1045,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>AvgDurationDate1</rd:DefaultName>
+                          <rd:DefaultName>AvgDurationDate</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1039,7 +1066,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox8">
+                        <Textbox Name="Textbox26">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1052,10 +1079,12 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <rd:DefaultName>Textbox26</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1070,7 +1099,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox11">
+                        <Textbox Name="Textbox27">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1089,7 +1118,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1106,14 +1135,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox18">
+                        <Textbox Name="Textbox28">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!SalesRatioToCategoriesSales.Value)</Value>
+                                  <Value>=Sum(Fields!SalesRatioToStaffSales.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.00%</Format>
@@ -1125,7 +1154,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox18</rd:DefaultName>
+                          <rd:DefaultName>Textbox28</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1142,7 +1171,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox13">
+                        <Textbox Name="Textbox29">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1161,7 +1190,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1178,14 +1207,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox23">
+                        <Textbox Name="Textbox30">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!SalesRatioToCategoriesOperations.Value)</Value>
+                                  <Value>=Sum(Fields!SalesRatioToStaffOperations.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.00%</Format>
@@ -1197,7 +1226,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1214,7 +1243,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox14">
+                        <Textbox Name="Textbox31">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1233,7 +1262,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox14</rd:DefaultName>
+                          <rd:DefaultName>Textbox31</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1250,14 +1279,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox26">
+                        <Textbox Name="Textbox32">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!SalesRatioToCategoriesRentDuration.Value)</Value>
+                                  <Value>=Sum(Fields!SalesRatioToStaffRentDuration.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Format>0.00%</Format>
@@ -1269,7 +1298,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox26</rd:DefaultName>
+                          <rd:DefaultName>Textbox32</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1286,7 +1315,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox5">
+                        <Textbox Name="Textbox15">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1304,7 +1333,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
                           <Visibility>
                             <Hidden>true</Hidden>
                           </Visibility>
@@ -1324,7 +1353,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox17">
+                        <Textbox Name="Textbox33">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1342,7 +1371,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox17</rd:DefaultName>
+                          <rd:DefaultName>Textbox33</rd:DefaultName>
                           <Visibility>
                             <Hidden>true</Hidden>
                           </Visibility>
@@ -1432,13 +1461,13 @@
             <DataSetName>DataSetTotal</DataSetName>
             <SortExpressions>
               <SortExpression>
-                <Value>=Fields!Category_Name.Value</Value>
+                <Value>=Fields!DW_Staff_Key.Value</Value>
               </SortExpression>
             </SortExpressions>
             <Top>0.56124in</Top>
-            <Left>0.125in</Left>
-            <Height>0.75in</Height>
-            <Width>9.92585in</Width>
+            <Left>1.38069in</Left>
+            <Height>1.44792in</Height>
+            <Width>9.50698in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1451,41 +1480,37 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Category_Name.Value</GroupExpression>
+                      <GroupExpression>=Fields!Full_Name.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Category_Name.Value</Value>
+                      <Value>=Fields!Full_Name.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Category_Name.Value</Label>
+                  <Label>=Fields!Full_Name.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Sales Ratio To Categories Sales</Label>
+                  <Label>Sales Ratio To Staff Sales</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Payment_Amount">
+                <ChartSeries Name="SalesRatioToStaffSales">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <X>=Fields!Category_Name.Value</X>
-                        <Y>=Sum(Fields!SalesRatioToCategoriesSales.Value)</Y>
+                        <Y>=Sum(Fields!SalesRatioToStaffSales.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style>
-                          <Border>
-                            <Width>0.25pt</Width>
-                          </Border>
                           <FontWeight>Bold</FontWeight>
-                          <Format>0%</Format>
+                          <Format>0.00%</Format>
                           <Color>White</Color>
                         </Style>
                         <UseValueAsLabel>true</UseValueAsLabel>
@@ -1803,10 +1828,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSetTotal</DataSetName>
-            <Top>0.24653in</Top>
-            <Left>10.06946in</Left>
-            <Height>3.23611in</Height>
-            <Width>4.55209in</Width>
+            <Top>2.20139in</Top>
+            <Height>2.88194in</Height>
+            <Width>4.27084in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1845,8 +1869,8 @@
                 </Action>
               </Actions>
             </ActionInfo>
-            <Top>0.02778in</Top>
-            <Left>0.04042in</Left>
+            <Top>0.05556in</Top>
+            <Left>0.33in</Left>
             <Height>0.25in</Height>
             <Width>1.57292in</Width>
             <ZIndex>2</ZIndex>
@@ -1860,6 +1884,184 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Tablix Name="Tablix4">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox48">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>DWStaff Key</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox48</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.94792in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Image Name="Image3">
+                          <Source>Database</Source>
+                          <Value>=Fields!Picture.Value</Value>
+                          <MIMEType>image/bmp</MIMEType>
+                          <Sizing>FitProportional</Sizing>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Image>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.25in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox54">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Picture</Value>
+                                <Style>
+                                  <FontFamily>Arial</FontFamily>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox54</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="DWStaffKey">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!DWStaffKey.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!DWStaffKey.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.30208in</Size>
+                    <CellContents>
+                      <Textbox Name="DWStaffKey1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!DWStaffKey.Value</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>DWStaffKey1</rd:DefaultName>
+                        <Visibility>
+                          <Hidden>true</Hidden>
+                        </Visibility>
+                        <Style>
+                          <Border>
+                            <Color>LightGrey</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSetStaffPicture</DataSetName>
+            <SortExpressions>
+              <SortExpression>
+                <Value>=Fields!DWStaffKey.Value</Value>
+              </SortExpression>
+            </SortExpressions>
+            <Top>0.56124in</Top>
+            <Left>0.02792in</Left>
+            <Height>1.19792in</Height>
+            <Width>1.30208in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
         </ReportItems>
         <Height>5.08333in</Height>
         <Style />
@@ -1867,7 +2069,7 @@
       <Width>16.14459in</Width>
       <Page>
         <PageHeader>
-          <Height>1.12375in</Height>
+          <Height>0.89458in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1878,7 +2080,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Sales Analysys Report by Categories</Value>
+                      <Value>Sales Analysys Report by Staff</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                       </Style>
@@ -1888,8 +2090,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>0.19667in</Top>
-              <Left>0.04042in</Left>
+              <Left>0.33in</Left>
               <Height>0.42708in</Height>
               <Width>8.81251in</Width>
               <Style>
@@ -1919,8 +2120,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox10</rd:DefaultName>
-              <Top>0.65153in</Top>
-              <Left>0.04042in</Left>
+              <Top>0.54389in</Top>
+              <Left>0.33in</Left>
               <Height>0.25in</Height>
               <Width>4.02084in</Width>
               <ZIndex>1</ZIndex>

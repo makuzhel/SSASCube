@@ -47,7 +47,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>osQok9DFVToeg06P6kFFV6gsL7o=10/25/2017 2:28:37 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>QN8AiMGz74FrorT+Ds3RrQMHd1Y=11/9/2017 12:44:32 PM10/30/2017 12:16:16 PM</TimeStamp>
         <ID>
           <String>Dim Staff</String>
         </ID>
@@ -89,7 +89,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>leNbzIGeX7ImXeyfc+kIiVtezbk=11/8/2017 4:43:04 PM10/30/2017 12:16:16 PM/XuuZ/SUXNl9GgQ+jOlD+PFeEpA=10/26/2017 1:01:50 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>7kPbg+R+lErdFja41jMdP5Y8dkw=11/9/2017 12:51:36 PM10/30/2017 12:16:16 PM/XuuZ/SUXNl9GgQ+jOlD+PFeEpA=10/26/2017 1:01:50 PM10/30/2017 12:16:16 PM</TimeStamp>
         <ID>
           <String>SakilaDW1</String>
         </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-11-08T14:43:14.246667Z</LastDeployed>
+  <LastDeployed>2017-11-09T10:51:44.796667Z</LastDeployed>
 </DeploymentSnapshot>
