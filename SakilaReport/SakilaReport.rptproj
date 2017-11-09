@@ -17,6 +17,14 @@
       <Name>SalesAnalysisReportStart.rdl</Name>
       <FullPath>SalesAnalysisReportStart.rdl</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>SalesARCategory.rdl</Name>
+      <FullPath>SalesARCategory.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>R2.rdl</Name>
+      <FullPath>R2.rdl</FullPath>
+    </ProjectItem>
   </Reports>
   <Configurations>
     <Configuration>

@@ -89,7 +89,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>ns/mlltUcucDeksjppI/aOITWdY=11/7/2017 2:04:25 PM10/30/2017 12:16:16 PM/XuuZ/SUXNl9GgQ+jOlD+PFeEpA=10/26/2017 1:01:50 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>leNbzIGeX7ImXeyfc+kIiVtezbk=11/8/2017 4:43:04 PM10/30/2017 12:16:16 PM/XuuZ/SUXNl9GgQ+jOlD+PFeEpA=10/26/2017 1:01:50 PM10/30/2017 12:16:16 PM</TimeStamp>
         <ID>
           <String>SakilaDW1</String>
         </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-11-07T21:13:45.18Z</LastDeployed>
+  <LastDeployed>2017-11-08T14:43:14.246667Z</LastDeployed>
 </DeploymentSnapshot>
