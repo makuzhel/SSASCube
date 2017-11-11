@@ -10,12 +10,8 @@
   <DataSets />
   <Reports>
     <ProjectItem>
-      <Name>R2.rdl</Name>
-      <FullPath>R2.rdl</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Report1.rdl</Name>
-      <FullPath>Report1.rdl</FullPath>
+      <Name>MedianSales.rdl</Name>
+      <FullPath>MedianSales.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>SalesAnalysisReportStart.rdl</Name>
@@ -28,6 +24,10 @@
     <ProjectItem>
       <Name>SalesARStaff.rdl</Name>
       <FullPath>SalesARStaff.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Top.rdl</Name>
+      <FullPath>Top.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

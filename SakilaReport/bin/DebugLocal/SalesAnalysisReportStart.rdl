@@ -851,7 +851,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetTotal</DataSetName>
-            <Top>0.07791in</Top>
+            <Top>0.39041in</Top>
             <Left>0.05in</Left>
             <Height>0.6875in</Height>
             <Width>6.14319in</Width>
@@ -888,8 +888,8 @@
                 </Action>
               </Actions>
             </ActionInfo>
-            <Top>0.7375in</Top>
-            <Left>0.28694in</Left>
+            <Top>0.04167in</Top>
+            <Left>0.05in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>1</ZIndex>
@@ -921,8 +921,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox24</rd:DefaultName>
-            <Top>0.7375in</Top>
-            <Left>1.50569in</Left>
+            <Top>0.02778in</Top>
+            <Left>1.30905in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>2</ZIndex>
@@ -963,8 +963,8 @@
                 </Action>
               </Actions>
             </ActionInfo>
-            <Top>0.7375in</Top>
-            <Left>2.77652in</Left>
+            <Top>0.02778in</Top>
+            <Left>2.63766in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>3</ZIndex>
@@ -2022,6 +2022,39 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
+          <Textbox Name="Textbox27">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Raiting of popularity</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>Blue</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox24</rd:DefaultName>
+            <Top>0.02778in</Top>
+            <Left>4.59944in</Left>
+            <Height>0.25in</Height>
+            <Width>1.59375in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>8.96944in</Height>
         <Style />
@@ -2029,7 +2062,7 @@
       <Width>10.44667in</Width>
       <Page>
         <PageHeader>
-          <Height>0.99875in</Height>
+          <Height>0.80084in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2050,8 +2083,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox9</rd:DefaultName>
-              <Top>0.19667in</Top>
-              <Left>0.04042in</Left>
+              <Top>0.0057in</Top>
+              <Left>0.05in</Left>
               <Height>0.42708in</Height>
               <Width>4.02084in</Width>
               <Style>
@@ -2074,6 +2107,7 @@
                       <Value>="Report preparation day: "&amp;Today()</Value>
                       <Style>
                         <FontStyle>Italic</FontStyle>
+                        <FontSize>9pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2081,8 +2115,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox10</rd:DefaultName>
-              <Top>0.65153in</Top>
-              <Left>0.04042in</Left>
+              <Top>0.48834in</Top>
+              <Left>0.05in</Left>
               <Height>0.25in</Height>
               <Width>4.02084in</Width>
               <ZIndex>1</ZIndex>
@@ -2090,68 +2124,7 @@
                 <Border>
                   <Style>None</Style>
                 </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox1">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>FRom</Label>
-                      <Value>="[Rental Date].[Date Key].&amp;["+Format(Parameters!from.Value,"yyyyMMdd")+"]"</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.19667in</Top>
-              <Left>4.72792in</Left>
-              <Height>0.25in</Height>
-              <Width>1in</Width>
-              <ZIndex>2</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox2">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Label>to</Label>
-                      <Value>="[Rental Date].[Date Key].&amp;["+Format(Parameters!to.Value,"yyyyMMdd")+"]"</Value>
-                      <Style />
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.19667in</Top>
-              <Left>5.79736in</Left>
-              <Height>0.25in</Height>
-              <Width>1in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
+                <VerticalAlign>Top</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -2181,7 +2154,7 @@
           <Value>01/01/2005 00:00:00</Value>
         </Values>
       </DefaultValue>
-      <Prompt>1st period date from</Prompt>
+      <Prompt>Date from</Prompt>
     </ReportParameter>
     <ReportParameter Name="to">
       <DataType>DateTime</DataType>
@@ -2190,7 +2163,7 @@
           <Value>=Today()</Value>
         </Values>
       </DefaultValue>
-      <Prompt>1st period date to</Prompt>
+      <Prompt>Date to</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>

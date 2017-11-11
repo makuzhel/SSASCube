@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,77 +19,77 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>zWoagabW0Cx444gKzp2SVpaNRqI=10/24/2017 12:15:11 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>zWoagabW0Cx444gKzp2SVpaNRqI=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Sakila DW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>4QGjavzi1RCShRTr4thL+2ceGVc=10/26/2017 12:33:58 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>4QGjavzi1RCShRTr4thL+2ceGVc=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Sakila DW</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Edk31P0ywPumQX1dmLCs9z+0hos=10/25/2017 2:28:37 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>Edk31P0ywPumQX1dmLCs9z+0hos=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Dim Customer</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ZMkAeW1l72+PBNrbRPii8OWcTv0=10/25/2017 2:28:37 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>ZMkAeW1l72+PBNrbRPii8OWcTv0=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Dim Film</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>QN8AiMGz74FrorT+Ds3RrQMHd1Y=11/9/2017 12:44:32 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>QN8AiMGz74FrorT+Ds3RrQMHd1Y=11/9/2017 9:58:08 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Dim Staff</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>RhdmwznC4ZppPamI5my48MZxh2k=11/7/2017 11:13:30 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>jcZfgWZeT1wNvl5OaeY+Wr16+No=11/10/2017 3:22:45 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>DimDate</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ffTozUOVpevZJAcvcN4ALF3WwFc=11/7/2017 2:04:25 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>ffTozUOVpevZJAcvcN4ALF3WwFc=11/9/2017 9:58:08 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Dim Category</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>HBg5nkCQM+goZLI+VnP+Out76nM=11/5/2017 5:18:39 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>HBg5nkCQM+goZLI+VnP+Out76nM=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Dim Cust Geography</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>Z0NHrt+gfwJt0stHwXBi7i4wQKM=10/25/2017 1:26:33 AM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>Z0NHrt+gfwJt0stHwXBi7i4wQKM=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>DimActor</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>u6n5kRsxpKxGhmKJStkiJu061GQ=10/26/2017 12:59:21 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>u6n5kRsxpKxGhmKJStkiJu061GQ=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>Dim Actor</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>7kPbg+R+lErdFja41jMdP5Y8dkw=11/9/2017 12:51:36 PM10/30/2017 12:16:16 PM/XuuZ/SUXNl9GgQ+jOlD+PFeEpA=10/26/2017 1:01:50 PM10/30/2017 12:16:16 PM</TimeStamp>
+        <TimeStamp>7kPbg+R+lErdFja41jMdP5Y8dkw=11/9/2017 9:58:08 PM11/9/2017 9:57:02 PM/XuuZ/SUXNl9GgQ+jOlD+PFeEpA=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
         <ID>
           <String>SakilaDW1</String>
         </ID>
@@ -97,7 +97,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>GDdV0KQbmE2EM78zcfe40Icwp0g=10/17/2017 1:08:15 PM10/30/2017 12:16:16 PM</TimeStamp>
+      <TimeStamp>GDdV0KQbmE2EM78zcfe40Icwp0g=11/9/2017 9:57:02 PM11/9/2017 9:57:02 PM</TimeStamp>
       <ID>
         <String>MDSakilaProjectMaryana</String>
       </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2017-11-09T10:51:44.796667Z</LastDeployed>
+  <LastDeployed>2017-11-10T13:26:03.406667Z</LastDeployed>
 </DeploymentSnapshot>
