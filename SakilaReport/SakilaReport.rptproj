@@ -22,12 +22,20 @@
       <FullPath>SalesARCategory.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>SalesARGeography.rdl</Name>
+      <FullPath>SalesARGeography.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>SalesARStaff.rdl</Name>
       <FullPath>SalesARStaff.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Top.rdl</Name>
       <FullPath>Top.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>MovingAverageSales.rdl</Name>
+      <FullPath>MovingAverageSales.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

@@ -30,7 +30,7 @@
             <Value>="[Rental Date].[Date Key].&amp;["+Format(Parameters!to.Value,"yyyyMMdd")+"]"</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToStaffSales], [Measures].[FactRentCount], [Measures].[SalesRatioToStaffOperations], [Measures].[Duration Date], [Measures].[SalesRatioToStaffRentDuration], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimStaff].[DW Staff Key].[DW Staff Key].ALLMEMBERS * [DimStaff].[Full Name].[Full Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToStaffSales], [Measures].[FactRentCount], [Measures].[SalesRatioToStaffOperations], [Measures].[Duration Date], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimStaff].[DW Staff Key].[DW Staff Key].ALLMEMBERS * [DimStaff].[Full Name].[Full Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -141,22 +141,6 @@
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
-                      <MeasureName>SalesRatioToStaffRentDuration</MeasureName>
-                      <UniqueName>[Measures].[SalesRatioToStaffRentDuration]</UniqueName>
-                    </ID>
-                    <ItemCaption>SalesRatioToStaffRentDuration</ItemCaption>
-                    <BackColor>true</BackColor>
-                    <ForeColor>true</ForeColor>
-                    <FontFamily>true</FontFamily>
-                    <FontSize>true</FontSize>
-                    <FontWeight>true</FontWeight>
-                    <FontStyle>true</FontStyle>
-                    <FontDecoration>true</FontDecoration>
-                    <FormattedValue>true</FormattedValue>
-                    <FormatString>true</FormatString>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
                       <MeasureName>AvgPaymentAmount</MeasureName>
                       <UniqueName>[Measures].[AvgPaymentAmount]</UniqueName>
                     </ID>
@@ -212,7 +196,7 @@
               </QueryProperties>
             </QuerySpecification>
             <Query>
-              <Statement> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToStaffSales], [Measures].[FactRentCount], [Measures].[SalesRatioToStaffOperations], [Measures].[Duration Date], [Measures].[SalesRatioToStaffRentDuration], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimStaff].[DW Staff Key].[DW Staff Key].ALLMEMBERS * [DimStaff].[Full Name].[Full Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement> SELECT NON EMPTY { [Measures].[Payment Amount], [Measures].[SalesRatioToStaffSales], [Measures].[FactRentCount], [Measures].[SalesRatioToStaffOperations], [Measures].[Duration Date], [Measures].[AvgPaymentAmount], [Measures].[AvgDurationDate] } ON COLUMNS, NON EMPTY { ([DimStaff].[DW Staff Key].[DW Staff Key].ALLMEMBERS * [DimStaff].[Full Name].[Full Name].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FromRentalDateDateKey, CONSTRAINED) : STRTOMEMBER(@ToRentalDateDateKey, CONSTRAINED) ) ON COLUMNS FROM [SakilaDWCube]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
                   <Name>FromRentalDateDateKey</Name>
@@ -278,10 +262,6 @@
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Duration Date]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="SalesRatioToStaffRentDuration">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesRatioToStaffRentDuration]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="AvgPaymentAmount">
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[AvgPaymentAmount]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -334,31 +314,28 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.80557in</Width>
+                  <Width>1.40974in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.22917in</Width>
+                  <Width>0.9479in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.72917in</Width>
+                  <Width>0.61251in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.34723in</Width>
+                  <Width>0.86806in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.79583in</Width>
+                  <Width>0.62916in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.25001in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.70416in</Width>
+                  <Width>0.84377in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.17984in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.8375in</Width>
+                  <Width>0.85833in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.79167in</Width>
@@ -452,7 +429,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Ratio to Sales</Value>
+                                  <Value>Sales share</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -488,7 +465,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Rent Operations, qty</Value>
+                                  <Value>Rent quantity</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -524,7 +501,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Ratio to Operations</Value>
+                                  <Value>Quantity share</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -572,42 +549,6 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox4</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox24">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Ratio to Rent Duration</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox24</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -824,7 +765,7 @@
                                   <Value>=Fields!Payment_Amount.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Format>n2</Format>
+                                    <Format>n0</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -974,41 +915,6 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Duration_Date</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <VerticalAlign>Middle</VerticalAlign>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="SalesRatioToStaffRentDuration">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!SalesRatioToStaffRentDuration.Value</Value>
-                                  <Style>
-                                    <Format>0.00%</Format>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>SalesRatioToStaffRentDuration</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1188,7 +1094,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Left</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -1217,7 +1123,7 @@
                                   <Value>=Sum(Fields!Payment_Amount.Value)</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Format>#,0.00;(#,0.00)</Format>
+                                    <Format>#,0;(#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1371,42 +1277,6 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox31</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>LightSteelBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox32">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!SalesRatioToStaffRentDuration.Value)</Value>
-                                  <Style>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Format>0.00%</Format>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox32</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1588,7 +1458,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1617,7 +1486,7 @@
             <Top>0.56124in</Top>
             <Left>1.38069in</Left>
             <Height>1.94792in</Height>
-            <Width>8.89582in</Width>
+            <Width>7.36665in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1980,7 +1849,7 @@
             </ChartNoDataMessage>
             <DataSetName>DataSetTotal</DataSetName>
             <Top>0.28472in</Top>
-            <Left>10.34595in</Left>
+            <Left>8.72095in</Left>
             <Height>3.77361in</Height>
             <Width>4.27084in</Width>
             <ZIndex>1</ZIndex>
@@ -2237,7 +2106,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Sales Analysys Report by Staff</Value>
+                      <Value>Sales analysis report by staff</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                       </Style>

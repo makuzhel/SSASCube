@@ -2320,7 +2320,7 @@
           <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
           <Value>
             <dds xmlns="">
-              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="40" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10486" scrolltop="6706" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="41725" y="20743" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="40" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-10486" scrolltop="6706" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="27067" y="12488" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
                 <font>
                   <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
                 </font>
@@ -3402,42 +3402,42 @@ The CALCULATE command controls the aggregation of leaf cells in the cube.
 If the CALCULATE command is deleted or modified, the data within the cube is affected.
 You should edit this command only if you manually specify how the cube is aggregated.
 */
-CALCULATE;                  
+CALCULATE;                     
 CREATE MEMBER CURRENTCUBE.[Measures].FactDurationDateCountRows
  AS (case when [Measures].[Duration Date]&gt;0 then 1
 else 0
 end), 
-VISIBLE = 1;                  
+VISIBLE = 1;                     
 
 CREATE MEMBER CURRENTCUBE.[Measures].AvgPaymentAmount
  AS iif([Measures].[FactReturnedOperationCount]=0,0,
 [Measures].[Payment Amount]/[Measures].[FactReturnedOperationCount]), 
 FORMAT_STRING = "Currency", 
-VISIBLE = 1;                 
+VISIBLE = 1;                    
 
 CREATE MEMBER CURRENTCUBE.[Measures].AvgDurationDate
  AS iif([Measures].[Measures].[FactReturnedOperationCount]=0,0,round([Measures].[Duration Date]/[Measures].[FactReturnedOperationCount],0)), 
-VISIBLE = 1;                 
+VISIBLE = 1;                    
 CREATE MEMBER CURRENTCUBE.[Measures].MAvg0
  AS --change for one day
 Avg(
 {[Rental Date].[CalendarYearDaily].CurrentMember.Lag(0):[Rental Date].[CalendarYearDaily].CurrentMember},
 [Measures].[Payment Amount]), 
-VISIBLE = 1;                 
+VISIBLE = 1;                    
 
 CREATE MEMBER CURRENTCUBE.[Measures].MAvg1
  AS --change for two days
 Avg(
 {[Rental Date].[CalendarYearDaily].CurrentMember.Lag(1):[Rental Date].[CalendarYearDaily].CurrentMember},
 [Measures].[Payment Amount]), 
-VISIBLE = 1;                 
+VISIBLE = 1;                    
 
 CREATE MEMBER CURRENTCUBE.[Measures].MAvgfor10days
  AS Avg(
 {[Rental Date].[CalendarYearDaily].CurrentMember.Lag(9):[Rental Date].[CalendarYearDaily].CurrentMember},
 [Measures].[Payment Amount]), 
 FORMAT_STRING = "Currency", 
-VISIBLE = 1;            
+VISIBLE = 1;               
 
 CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToCategoriesSales
  AS case
@@ -3447,7 +3447,7 @@ CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToCategoriesSales
     [Measures].[Payment Amount]/([DimCategory].[DW Category Key].CurrentMember.Parent, [Measures].[Payment Amount])
 end, 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1;  
+VISIBLE = 1;     
 CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToCategoriesOperations
  AS case
     when [DimCategory].[DW Category Key].CurrentMember.Level.Ordinal=0
@@ -3456,16 +3456,7 @@ CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToCategoriesOperations
     [Measures].[FactRentCount]/([DimCategory].[DW Category Key].CurrentMember.Parent, [Measures].[FactRentCount])
 end, 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1;  
-CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToCategoriesRentDuration
- AS case
-    when [DimCategory].[DW Category Key].CurrentMember.Level.Ordinal=0
-    then 1
-    else 
-    [Measures].[Duration Date]/([DimCategory].[DW Category Key].CurrentMember.Parent, [Measures].[Duration Date])
-end, 
-FORMAT_STRING = "Percent", 
-VISIBLE = 1; 
+VISIBLE = 1;    
 CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToStaffSales
  AS case
     when [DimStaff].[DW Staff Key].CurrentMember.Level.Ordinal=0
@@ -3474,7 +3465,7 @@ CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToStaffSales
     [Measures].[Payment Amount]/([DimStaff].[DW Staff Key].CurrentMember.Parent, [Measures].[Payment Amount])
 end, 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1  ; 
+VISIBLE = 1;    
 CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToStaffOperations
  AS case
     when [DimStaff].[DW Staff Key].CurrentMember.Level.Ordinal=0
@@ -3483,33 +3474,15 @@ CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToStaffOperations
     [Measures].[FactRentCount]/([DimStaff].[DW Staff Key].CurrentMember.Parent, [Measures].[FactRentCount])
 end, 
 FORMAT_STRING = "Percent", 
-VISIBLE = 1  ; 
-CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToStaffRentDuration
- AS case
-    when [DimStaff].[DW Staff Key].CurrentMember.Level.Ordinal=0
-    then 1
-    else 
-    [Measures].[Duration Date]/([DimStaff].[DW Staff Key].CurrentMember.Parent, [Measures].[Duration Date])
-end, 
-FORMAT_STRING = "Percent", 
-VISIBLE = 1  ;           
-CREATE MEMBER CURRENTCUBE.[Measures].SalesRatioToGeographySales
- AS case
-    when [DimCustGeography].[Hierarchy].CurrentMember.Level.Ordinal=0
-    then 1
-    else 
-    [Measures].[Payment Amount]/([DimCustGeography].[Hierarchy].CurrentMember.Parent, [Measures].[Payment Amount])
-end, 
-FORMAT_STRING = "Percent", 
-VISIBLE = 1;     
+VISIBLE = 1;        
 
 CREATE MEMBER CURRENTCUBE.[Measures].MedianM
  AS (MEDIAN( {[Rental Date].[CalendarYearDaily].CurrentMember.Children}, [Measures].[Payment Amount])
  ), 
-VISIBLE = 1;    
+VISIBLE = 1;       
 CREATE MEMBER CURRENTCUBE.[Measures].CalcAvg
  AS (AVG( {[Rental Date].[CalendarYearDaily].CurrentMember.Children}, [Measures].[Payment Amount] )), 
-VISIBLE = 1;    
+VISIBLE = 1;       
 CREATE MEMBER CURRENTCUBE.[Measures].CalcAvgCount
  AS AVG( {[Rental Date].[CalendarYearDaily].CurrentMember.Children},  [Measures].[FactReturnedOperationCount]), 
 VISIBLE = 1; </Text>

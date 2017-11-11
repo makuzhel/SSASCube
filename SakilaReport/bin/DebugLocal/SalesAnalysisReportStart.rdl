@@ -629,7 +629,7 @@
                                 <TextRun>
                                   <Value>=Fields!Payment_Amount.Value</Value>
                                   <Style>
-                                    <Format>#,0.00;(#,0.00)</Format>
+                                    <Format>#,0;(#,0)</Format>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -921,6 +921,15 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox24</rd:DefaultName>
+            <ActionInfo>
+              <Actions>
+                <Action>
+                  <Drillthrough>
+                    <ReportName>SalesARGeography</ReportName>
+                  </Drillthrough>
+                </Action>
+              </Actions>
+            </ActionInfo>
             <Top>0.02778in</Top>
             <Left>1.30905in</Left>
             <Height>0.25in</Height>
@@ -2073,7 +2082,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Sales Analysys Report</Value>
+                      <Value>Sales analysis report</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                       </Style>
